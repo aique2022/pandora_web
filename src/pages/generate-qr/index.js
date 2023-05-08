@@ -13,11 +13,18 @@ const GenerateQR = () => {
     return (
 
         <div className='container-fluid pt-5 '>
-            
-            <QRCodeGenerator  quickpin={qpin}/><br/>
-            Transaction #: {transNumber}<br/>
-            Quickpin : {qpin}<br/>
-            Location : {location}
+            <div className="row">
+                <QRCodeGenerator  quickpin={qpin}/><br/>
+                <strong>Transaction #: {transNumber}</strong><br />
+                Quickpin : {qpin}<br/>
+                Location : {location}
+            </div>
+            <div className="row">
+                <button className='mt-3 col-lg-6 col-12 border border-dark rounded bg-light py-3 px-3'> Add new transaction</button>
+            </div>
+            <div className="row">
+                <button className="mt-3 col-lg-6 col-12 border border-success rounded bg-gradients py-3 px-3"> Home</button>
+            </div>
         </div>        
     )
 }

@@ -5,6 +5,7 @@ import { useQRCode } from 'next-qrcode';
 const QRCodeGenerator = ({quickpin}) => {
     const [qr, setQr] = useState('')
     const { SVG } = useQRCode();
+
     useEffect(() => {
         if(quickpin != "") {
             setQr(

@@ -1,41 +1,28 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import DoorSizes from '../../../utils/food_door_sizes'
+import DoorSizes from '../../../utils/keep_door_sizes'
 import { useRouter } from 'next/router';
 const SizesList = () => {
     const [active, setActive] = useState(null)
     const router = useRouter()
     let moduleData = router.query.moduleData;
-    const navPage = (doorSize, doorSizeName) => {
+    const navPage = () => {
       
       router.push({
-        pathname: '/inputnumber',
+        pathname: '/keep/doorrate',
         query: {
-          service: doorSize,
           moduleData: moduleData,
           tat: '',
 
 
         }
-      },'/inputnumber')
-        /*
-        router.push({
-            pathname: '/inputnumber',
-            query: {
-              service: doorSize,
-              moduleData: moduleData,
-              service: '',
-              tat: '',
+      },'/keep/doorrate')
 
-
-            }
-          },'/inputnumber')*/
     }
     return (
         <>
          <div>
                <ul className='container-fluid'>
-                  
                       {
                           DoorSizes.map((val) =>
                               <li className={`row bg bg-white rounded align-items-center mb-2 border-shadow services px-3 ${active == val && 'active'}`} key={val.doorSizeCode} onMouseLeave={()=> setActive(null)} onMouseEnter={()=> setActive(val)} onClick={() => navPage(val.doorSizeCode, val.doorsizesName)}>

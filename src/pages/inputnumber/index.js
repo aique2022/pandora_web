@@ -18,7 +18,7 @@ const InputNumber = () => {
 
     useEffect(() => {
        
-        if(mobile.length > 10 && loc != '0000') {
+        if(mobile.length > 10) {
             setActive(true)
         }
         else {
@@ -42,12 +42,12 @@ const InputNumber = () => {
 
             <div className='col-lg-6 right-panel'>
                 {/* right */}
-                <div className='row'>
+               {/* <div className='row'>
                     <div className='col-lg-12'>
                         <div>Select Locker Location:</div>
                             <Location setLocation={setLockerLoc}/>
                         </div>
-                </div>
+                </div>*/} 
                 <div className='row'>
                     <div className='col-lg-12'>
                         < InputMobileNumber setNumber={setMobile}/>
