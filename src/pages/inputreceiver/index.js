@@ -12,6 +12,7 @@ const InputReceiver = () => {
     let mobile = router.query.mobilenumber;
     let module = router.query.moduleData;
     let service = router.query.service;
+    let location = router.query.location
     useEffect(() => {
         
         if(setmobile.length > 10) {
